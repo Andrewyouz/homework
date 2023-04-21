@@ -1,12 +1,12 @@
 //找回文数
 #include<iostream>
 #include<string>
+#include<algorithm>
 using namespace std;
 
 class Solution {
     public:
         Solution();
-        ~Solution();
         bool isPalindrome(int );
         void palin_print();
     private:
@@ -20,25 +20,22 @@ Solution::Solution()
 }
 
 bool Solution::isPalindrome(int a){
-    int b = 0;
-    int c = a;
-    while(c){
-        b = b*10 + c%10;
-        c /= 10;
+    string s=to_string(a);
+    int i=s.length();
+    for(int j=0;j<i;j++){
+        if(s[j]!=s[i-j-1]) return false;
     }
-    if(a == b)
-        return true;
-    else
-        return false;
+    return true;
 }
 
 void Solution::palin_print(){
     int a = num+1;
     while(n>0){
         if(isPalindrome(a)){
-            cout<<a<<endl;
+            cout<<a++<<" ";
             n--;
         }
+        ++a;
     }
 }
 
@@ -48,6 +45,7 @@ int main(){
     while(i>0){
         Solution s;
         s.palin_print();
+        cout<<endl;
         i--;
     }
     system("pause");
