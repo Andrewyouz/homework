@@ -6,6 +6,7 @@
         "list": "cpp",
         "string": "cpp",
         "unordered_map": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "iostream": "cpp"
     }
 }
